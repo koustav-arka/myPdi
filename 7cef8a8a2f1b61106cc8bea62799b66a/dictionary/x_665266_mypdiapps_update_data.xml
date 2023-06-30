@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="c059c5d22fd3a1106cc8bea62799b60b" extends="sys_import_set_row" label="update_data" max_length="40" name="x_665266_mypdiapps_update_data" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Date" label="Date" max_length="40" name="u_date" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Serial Number" label="Serial Number" max_length="40" name="u_serial_number" type="string"/>
+    </element>
+</database>

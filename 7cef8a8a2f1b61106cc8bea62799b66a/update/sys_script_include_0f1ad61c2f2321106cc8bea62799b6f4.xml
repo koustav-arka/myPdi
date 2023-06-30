@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_665266_mypdiapps.dataUpdateUtility</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>dataUpdateUtility</name>
+        <script><![CDATA[var dataUpdateUtility = Class.create();
+dataUpdateUtility.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    getTaskDetails: function() {
+        var task = this.getParameter('sysparm_taskNum');
+        var resp = {};
+        var taskGR = new GlideRecord('task');
+        taskGR.addEncodedQuery('numberLIKE' + task);
+        taskGR.query();
+        if (taskGR.next()) {
+            resp.sId = taskGR.sys_id.toString();
+            resp.sysClass = taskGR.sys_class_name.toString();
+        } else {
+            resp.error = 'No Matching Record found.';
+        }
+        var json = new global.JSON();
+        var tskDta = json.encode(resp); //JSON formatted string    
+
+        return tskDta;
+
+    },
+
+    getCiDetails: function() {
+        var ci = this.getParameter('sysparm_ci');
+        var resp = {};
+        var ciGR = new GlideRecord('cmdb_ci');
+        ciGR.addEncodedQuery('nameLIKE' + ci);
+        ciGR.query();
+        if (ciGR.next()) {
+            resp.sId = ciGR.sys_id.toString();
+            resp.sysClass = ciGR.sys_class_name.getDisplayValue();
+        } else {
+            resp.error = 'No Matching Record found.';
+        }
+        var json = new global.JSON();
+        var ciDta = json.encode(resp); //JSON formatted string    
+
+        return ciDta;
+    },
+
+    type: 'dataUpdateUtility'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-06-16 17:39:41</sys_created_on>
+        <sys_id>0f1ad61c2f2321106cc8bea62799b6f4</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>dataUpdateUtility</sys_name>
+        <sys_package display_value="MyPdiApps" source="x_665266_mypdiapps">7cef8a8a2f1b61106cc8bea62799b66a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="MyPdiApps">7cef8a8a2f1b61106cc8bea62799b66a</sys_scope>
+        <sys_update_name>sys_script_include_0f1ad61c2f2321106cc8bea62799b6f4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-06-27 09:12:08</sys_updated_on>
+    </sys_script_include>
+</record_update>
