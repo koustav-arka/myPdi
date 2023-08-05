@@ -8,49 +8,51 @@
         <applies_target_record>false</applies_target_record>
         <applies_to>set</applies_to>
         <cat_item/>
-        <cat_variable>IO:080bd3ec2f6f21106cc8bea62799b667</cat_variable>
+        <cat_variable>IO:83c076902fa321106cc8bea62799b60d</cat_variable>
         <condition/>
         <description/>
         <field/>
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>loadRefFields</name>
+        <name>getCurrentValues</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
-    if (isLoading || newValue == '') {
-        return;
-    }
-	alert(g_form.getValue('class_name'));
-	//g_form.setValue('class_name',g_form.getValue('task_class'));
-    var ga = new GlideAjax('x_665266_mypdiapps.dataUpdateUtility');
-    ga.addParam('sysparm_name', 'populateMRVS');
-    ga.addParam('sysparm_class_info', g_form.getValue('class_name')); // give here the requestor variable name
-    ga.getXML(classVrs);
+   if (isLoading || newValue == '') {
+      return;
+   }
+	var record = sessionStorage.getItem("record");
+	var cls = sessionStorage.getItem("class");
+	var fieldVal = new GlideAjax('x_665266_mypdiapps.dataUpdateUtility');
+    fieldVal.addParam('sysparm_name', 'getValues');
+	fieldVal.addParam('sysparm_cls', cls);
+    fieldVal.addParam('sysparm_rec', record);
+	fieldVal.addParam('sysparm_field', g_form.getValue('field'));
+    fieldVal.getXML(ajaxResp);
 
-    function classVrs(response) {
-        var val = response.responseXML.documentElement.getAttribute("answer");
-		alert(val);
-        g_form.setValue('task_fields', val); // give name of MRVS variable set here
-    }
-    //Type appropriate comment here, and begin script below
-
+	function ajaxResp(response) {
+        // get attachmentInfo elements
+        var ans = response.responseXML.documentElement.getAttribute('answer');
+		g_form.setValue('current_value',ans);
+	}
+   //Type appropriate comment here, and begin script below
+   
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-06-17 17:04:13</sys_created_on>
+        <sys_created_on>2023-07-16 05:14:21</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>a06bd3642fe361106cc8bea62799b6db</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>loadRefFields</sys_name>
+        <sys_id>7fda06f92f4cb1106cc8bea62799b610</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>getCurrentValues</sys_name>
         <sys_overrides/>
         <sys_package display_value="MyPdiApps" source="x_665266_mypdiapps">7cef8a8a2f1b61106cc8bea62799b66a</sys_package>
         <sys_policy/>
         <sys_scope display_value="MyPdiApps">7cef8a8a2f1b61106cc8bea62799b66a</sys_scope>
-        <sys_update_name>catalog_script_client_a06bd3642fe361106cc8bea62799b6db</sys_update_name>
+        <sys_update_name>catalog_script_client_7fda06f92f4cb1106cc8bea62799b610</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-27 08:51:45</sys_updated_on>
+        <sys_updated_on>2023-07-16 05:40:44</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

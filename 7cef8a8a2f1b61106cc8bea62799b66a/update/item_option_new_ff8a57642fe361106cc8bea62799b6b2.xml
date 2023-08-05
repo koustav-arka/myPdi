@@ -25,7 +25,7 @@
         <global>false</global>
         <help_tag>More information</help_tag>
         <help_text/>
-        <hidden>false</hidden>
+        <hidden>true</hidden>
         <include_none>false</include_none>
         <instructions/>
         <layout>normal</layout>
@@ -77,14 +77,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-17 16:57:43</sys_created_on>
         <sys_id>ff8a57642fe361106cc8bea62799b6b2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Class Name</sys_name>
         <sys_package display_value="MyPdiApps" source="x_665266_mypdiapps">7cef8a8a2f1b61106cc8bea62799b66a</sys_package>
         <sys_policy/>
         <sys_scope display_value="MyPdiApps">7cef8a8a2f1b61106cc8bea62799b66a</sys_scope>
         <sys_update_name>item_option_new_ff8a57642fe361106cc8bea62799b6b2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-17 16:57:43</sys_updated_on>
+        <sys_updated_on>2023-07-31 13:14:56</sys_updated_on>
         <table/>
         <tooltip/>
         <type>6</type>

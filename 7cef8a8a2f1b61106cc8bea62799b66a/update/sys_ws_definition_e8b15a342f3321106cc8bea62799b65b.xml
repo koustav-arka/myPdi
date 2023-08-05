@@ -4,10 +4,10 @@
         <base_uri>/api/x_665266_mypdiapps/dynamic_catalog_submission</base_uri>
         <consumes>application/json,application/xml,text/xml</consumes>
         <consumes_customized>false</consumes_customized>
-        <default_version>No active default version</default_version>
+        <default_version>v1</default_version>
         <doc_link/>
         <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
-        <is_versioned>false</is_versioned>
+        <is_versioned>true</is_versioned>
         <name>Dynamic Catalog Submission</name>
         <namespace>x_665266_mypdiapps</namespace>
         <produces>application/json,application/xml,text/xml</produces>
@@ -18,13 +18,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-30 16:33:23</sys_created_on>
         <sys_id>e8b15a342f3321106cc8bea62799b65b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Dynamic Catalog Submission</sys_name>
         <sys_package display_value="MyPdiApps" source="x_665266_mypdiapps">7cef8a8a2f1b61106cc8bea62799b66a</sys_package>
         <sys_policy/>
         <sys_scope display_value="MyPdiApps">7cef8a8a2f1b61106cc8bea62799b66a</sys_scope>
         <sys_update_name>sys_ws_definition_e8b15a342f3321106cc8bea62799b65b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-30 16:33:23</sys_updated_on>
+        <sys_updated_on>2023-06-30 16:40:02</sys_updated_on>
     </sys_ws_definition>
 </record_update>

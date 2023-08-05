@@ -37,17 +37,17 @@
         <lookup_value/>
         <macro/>
         <macroponent/>
-        <mandatory>true</mandatory>
+        <mandatory>false</mandatory>
         <map_to_field>false</map_to_field>
         <mask_use_confirmation>false</mask_use_confirmation>
         <mask_use_encryption>false</mask_use_encryption>
-        <name>load_fields</name>
-        <order>50</order>
+        <name>new_value</name>
+        <order>400</order>
         <post_insert_script/>
         <price_if_checked>0</price_if_checked>
         <pricing_implications>false</pricing_implications>
         <published_ref/>
-        <question_text>Load Fields</question_text>
+        <question_text>New value</question_text>
         <read_only>false</read_only>
         <read_roles/>
         <read_script/>
@@ -75,19 +75,19 @@
         <summary_macro/>
         <sys_class_name>item_option_new</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-06-17 17:00:31</sys_created_on>
-        <sys_id>080bd3ec2f6f21106cc8bea62799b667</sys_id>
+        <sys_created_on>2023-07-16 04:46:46</sys_created_on>
+        <sys_id>54794e792f4cb1106cc8bea62799b6fd</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>Load Fields</sys_name>
+        <sys_name>New value</sys_name>
         <sys_package display_value="MyPdiApps" source="x_665266_mypdiapps">7cef8a8a2f1b61106cc8bea62799b66a</sys_package>
         <sys_policy/>
         <sys_scope display_value="MyPdiApps">7cef8a8a2f1b61106cc8bea62799b66a</sys_scope>
-        <sys_update_name>item_option_new_080bd3ec2f6f21106cc8bea62799b667</sys_update_name>
+        <sys_update_name>item_option_new_54794e792f4cb1106cc8bea62799b6fd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-17 17:00:31</sys_updated_on>
+        <sys_updated_on>2023-07-16 04:46:46</sys_updated_on>
         <table/>
         <tooltip/>
-        <type>7</type>
+        <type>6</type>
         <ui_page/>
         <unique>false</unique>
         <use_dynamic_default>false</use_dynamic_default>
@@ -103,39 +103,39 @@
         <visible_summary>true</visible_summary>
         <write_roles/>
     </item_option_new>
-    <sys_translated_text action="delete_multiple" query="documentkey=080bd3ec2f6f21106cc8bea62799b667"/>
-    <fx_price action="delete_multiple" query="id=080bd3ec2f6f21106cc8bea62799b667"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=54794e792f4cb1106cc8bea62799b6fd"/>
+    <fx_price action="delete_multiple" query="id=54794e792f4cb1106cc8bea62799b6fd"/>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
-        <currency display_value="GBP">GBP</currency>
+        <currency display_value="USD">USD</currency>
         <field>price_if_checked</field>
-        <id>080bd3ec2f6f21106cc8bea62799b667</id>
+        <id>54794e792f4cb1106cc8bea62799b6fd</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-06-17 17:00:31</sys_created_on>
-        <sys_id>635b1b642fe361106cc8bea62799b64c</sys_id>
+        <sys_created_on>2023-07-16 04:46:46</sys_created_on>
+        <sys_id>3589ce392f4cb1106cc8bea62799b6cb</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-17 17:00:31</sys_updated_on>
+        <sys_updated_on>2023-07-16 04:46:46</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>
     <fx_price action="INSERT_OR_UPDATE">
         <amount>0</amount>
-        <currency display_value="GBP">GBP</currency>
+        <currency display_value="USD">USD</currency>
         <field>rec_price_if_checked</field>
-        <id>080bd3ec2f6f21106cc8bea62799b667</id>
+        <id>54794e792f4cb1106cc8bea62799b6fd</id>
         <parent/>
         <reference_amount>0</reference_amount>
         <reference_currency display_value="USD">USD</reference_currency>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-06-17 17:00:31</sys_created_on>
-        <sys_id>a75b1b642fe361106cc8bea62799b64b</sys_id>
+        <sys_created_on>2023-07-16 04:46:46</sys_created_on>
+        <sys_id>b989ce392f4cb1106cc8bea62799b6ca</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-17 17:00:31</sys_updated_on>
+        <sys_updated_on>2023-07-16 04:46:46</sys_updated_on>
         <table>item_option_new</table>
         <type>calculated</type>
     </fx_price>

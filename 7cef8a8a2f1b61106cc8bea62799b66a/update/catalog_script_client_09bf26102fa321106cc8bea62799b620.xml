@@ -34,6 +34,11 @@
 		alert(answer.sId);
 		g_form.setValue('ref_ci_record', answer.sId);
 		g_form.setValue('ci_class', answer.sysClass.toString());
+		if (typeof(Storage) !== "undefined") {
+            sessionStorage.setItem("class", "" + g_form.getValue('ci_class'));
+        } else {
+            alert("Sorry, your browser does not support Web Storage...");
+        }
     }
 
     //Type appropriate comment here, and begin script below
@@ -45,7 +50,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>09bf26102fa321106cc8bea62799b620</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>getCiDetails</sys_name>
         <sys_overrides/>
         <sys_package display_value="MyPdiApps" source="x_665266_mypdiapps">7cef8a8a2f1b61106cc8bea62799b66a</sys_package>
@@ -53,7 +58,7 @@
         <sys_scope display_value="MyPdiApps">7cef8a8a2f1b61106cc8bea62799b66a</sys_scope>
         <sys_update_name>catalog_script_client_09bf26102fa321106cc8bea62799b620</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-16 19:14:06</sys_updated_on>
+        <sys_updated_on>2023-07-02 13:32:25</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>

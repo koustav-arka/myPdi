@@ -17,15 +17,33 @@ dataUpdateUtility.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         taskGR.addEncodedQuery('numberLIKE' + task);
         taskGR.query();
         if (taskGR.next()) {
+
             resp.sId = taskGR.sys_id.toString();
-            resp.sysClass = taskGR.sys_class_name.toString();
+            resp.sysClass = getClasses(taskGR.sys_class_name);
         } else {
             resp.error = 'No Matching Record found.';
         }
         var json = new global.JSON();
         var tskDta = json.encode(resp); //JSON formatted string    
-
         return tskDta;
+
+        function getClasses(cls) {
+            var arr = [];
+            arr.push(cls);
+            return checkChildExists(cls);
+
+            function checkChildExists(c) {
+                var ch = new GlideRecord('sys_db_object');
+                ch.addQuery('name', c);
+                ch.query();
+                if (ch.next()) {
+                    arr.push(ch.super_class.name + '');
+                    checkChildExists(ch.super_class.name);
+                }
+                var str = arr.toString();
+                return str;
+            }
+        }
 
     },
 
@@ -47,19 +65,39 @@ dataUpdateUtility.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         return ciDta;
     },
 
+    getValues: function() {
+        var cls = this.getParameter('sysparm_cls');
+        var rec = this.getParameter('sysparm_rec');
+        var field = '';
+		var recCls = '';
+        var dic = new GlideRecord('sys_dictionary');
+        dic.addEncodedQuery('nameIN' + cls + '^column_labelSTARTSWITH' + this.getParameter('sysparm_field'));
+        dic.query();
+        if (dic.next()){
+			field = dic.element;
+			recCls = dic.name
+		}
+            
+
+        var grRec = new GlideRecord(recCls);
+        grRec.get(rec);
+        return grRec.getDisplayValue(field);
+
+    },
+
     type: 'dataUpdateUtility'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-16 17:39:41</sys_created_on>
         <sys_id>0f1ad61c2f2321106cc8bea62799b6f4</sys_id>
-        <sys_mod_count>28</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>dataUpdateUtility</sys_name>
         <sys_package display_value="MyPdiApps" source="x_665266_mypdiapps">7cef8a8a2f1b61106cc8bea62799b66a</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="MyPdiApps">7cef8a8a2f1b61106cc8bea62799b66a</sys_scope>
         <sys_update_name>sys_script_include_0f1ad61c2f2321106cc8bea62799b6f4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-27 09:12:08</sys_updated_on>
+        <sys_updated_on>2023-07-16 05:42:33</sys_updated_on>
     </sys_script_include>
 </record_update>

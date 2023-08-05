@@ -14,7 +14,7 @@
         <description/>
         <display_price_property>non_zero</display_price_property>
         <entitlement_script/>
-        <flow_designer_flow display_value="Application Intake Request V2">8c599a89eb2191100290e744d852283f</flow_designer_flow>
+        <flow_designer_flow display_value="Data modification flow">e812073d2f40f1106cc8bea62799b679</flow_designer_flow>
         <fulfillment_automation_level>unspecified</fulfillment_automation_level>
         <group/>
         <hide_sp>false</hide_sp>
@@ -51,7 +51,7 @@
         <recurring_frequency/>
         <recurring_price>0</recurring_price>
         <request_method/>
-        <roles/>
+        <roles>snc_internal</roles>
         <sc_catalogs>e0d08b13c3330100c8b837659bba8fb4</sc_catalogs>
         <sc_ic_item_staging/>
         <sc_ic_version/>
@@ -64,14 +64,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-06-16 17:02:51</sys_created_on>
         <sys_id>4f1212d02f2321106cc8bea62799b68f</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Data modifications</sys_name>
         <sys_package display_value="MyPdiApps" source="x_665266_mypdiapps">7cef8a8a2f1b61106cc8bea62799b66a</sys_package>
         <sys_policy/>
         <sys_scope display_value="MyPdiApps">7cef8a8a2f1b61106cc8bea62799b66a</sys_scope>
         <sys_update_name>sc_cat_item_4f1212d02f2321106cc8bea62799b68f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-06-17 09:11:03</sys_updated_on>
+        <sys_updated_on>2023-07-16 15:36:39</sys_updated_on>
         <taxonomy_topic/>
         <template/>
         <template_manager_roles/>

@@ -8,58 +8,62 @@
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
         <cat_item display_value="Data modifications">4f1212d02f2321106cc8bea62799b68f</cat_item>
-        <cat_variable>IO:7fc812982f2321106cc8bea62799b629</cat_variable>
+        <cat_variable>IO:51449a142f2321106cc8bea62799b646</cat_variable>
         <condition/>
         <description/>
         <field/>
         <global>true</global>
         <isolate_script>true</isolate_script>
         <messages/>
-        <name>getTaskDetails</name>
+        <name>Show respective fields</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
     if (isLoading || newValue == '') {
+        g_form.setDisplay('exact_task_number', false);
+        g_form.setDisplay('enter_ci_name', false);
+        g_form.setDisplay('task_ref_record', false);
+        g_form.setDisplay('ref_ci_record', false);
+        g_form.setDisplay('task_class', false);
+        g_form.setDisplay('ci_class', false);
+        g_form.setDisplay('task_fields', false);
         return;
     }
 
-    var taskDet = new GlideAjax('x_665266_mypdiapps.dataUpdateUtility');
-    taskDet.addParam('sysparm_name', 'getTaskDetails');
-    taskDet.addParam('sysparm_taskNum', g_form.getValue('exact_task_number'));
-    taskDet.getXML(ajaxResp);
-
-    function ajaxResp(response) {
-        // get attachmentInfo elements
-        var ans = response.responseXML.documentElement.getAttribute('answer');
-        var answer = JSON.parse(ans);
-        //alert(answer.sId);
-        g_form.setValue('task_ref_record', answer.sId);
-        g_form.setValue('task_class', answer.sysClass.toString());
-        if (typeof(Storage) !== "undefined") {
-            sessionStorage.setItem("class", "" + g_form.getValue('task_class'));
-			sessionStorage.setItem("record", "" + g_form.getValue('task_ref_record'));
-        } else {
-            alert("Sorry, your browser does not support Web Storage...");
-        }
+    if (g_form.getValue('record_class') == 'task') {
+        g_form.setDisplay('exact_task_number', true);
+        g_form.setDisplay('task_ref_record', true);
+        g_form.setDisplay('task_class', true);
+        g_form.setDisplay('task_fields', true);
+		g_form.setDisplay('enter_ci_name', false);
+        g_form.setDisplay('ref_ci_record', false);
+        g_form.setDisplay('ci_class', false);
     }
-
+    if (g_form.getValue('record_class') == 'ci') {
+        g_form.setDisplay('enter_ci_name', true);
+        g_form.setDisplay('ref_ci_record', true);
+        g_form.setDisplay('ci_class', true);
+        g_form.setDisplay('task_fields', true);
+		g_form.setDisplay('exact_task_number', false);
+        g_form.setDisplay('task_ref_record', false);
+        g_form.setDisplay('task_class', false);
+    }
     //Type appropriate comment here, and begin script below
-
 }]]></script>
         <sys_class_name>catalog_script_client</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2023-06-16 17:44:32</sys_created_on>
+        <sys_created_on>2023-07-16 03:39:08</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>141b125c2f2321106cc8bea62799b656</sys_id>
-        <sys_mod_count>12</sys_mod_count>
-        <sys_name>getTaskDetails</sys_name>
+        <sys_id>cd7831752f0cb1106cc8bea62799b6f9</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Show respective fields</sys_name>
         <sys_overrides/>
         <sys_package display_value="MyPdiApps" source="x_665266_mypdiapps">7cef8a8a2f1b61106cc8bea62799b66a</sys_package>
         <sys_policy/>
         <sys_scope display_value="MyPdiApps">7cef8a8a2f1b61106cc8bea62799b66a</sys_scope>
-        <sys_update_name>catalog_script_client_141b125c2f2321106cc8bea62799b656</sys_update_name>
+        <sys_update_name>catalog_script_client_cd7831752f0cb1106cc8bea62799b6f9</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-07-16 04:50:58</sys_updated_on>
+        <sys_updated_on>2023-07-16 03:42:50</sys_updated_on>
         <table/>
         <type>onChange</type>
         <ui_type>10</ui_type>
